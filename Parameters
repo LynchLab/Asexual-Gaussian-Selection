@@ -1,0 +1,5 @@
+# Run Parameters
+# Format:
+# variable_name sequence of values to use
+
+mutbeta 1.0 0.33
