@@ -7,7 +7,7 @@ the forces of mutation, selection, and random genetic drift.
 ***** This version has three types of sites simultaneously present denoted 1, 2, and 3.
 
 ***** This version allows the use of arbitrary numbers of sites and stength of selection, and also an arbitrary fitness function of the form exp(-s * (n^powerexp)).
-      Powerexp = 1.0 is the negative exponential model; Powerexp = 2.0 is the half-Gaussian model; but any other exponent is allowable. 
+      Powerexp = 1.0 is the negative exponential model; Powerexp = 2.0 is the Gaussian model; but any other exponent is allowable. 
 
 The actual population size is assumed to be equal to the effective size (N, the number of new individuals drawn each generation), 
 which is constant in time, although the genetic effective size influenced by linkage naturally evolves.
@@ -66,11 +66,11 @@ NATURAL POPULATION VALUES, IS GIVEN INTERNALLY. THE LOOP IMMEDIATELY BELOW THIS 
 #define sco2		0.0001 				    /* selection coefficient for medium-effect alleles */
 #define sco3		0.001				/* selection coefficient for major-effect alleles. BE SURE TO PLACE IN INCREASING ORDER */
 
-#define powerexp	2.0						/* 1.0 means an exponential function; 2.0 means a half-Gaussian. */
+#define powerexp	2.0						/* 1.0 means an exponential function; 2.0 means a Gaussian. */
 
-/* #define thetaopt		((double) ell3) + (((double) ell2) * (sco2/sco3)) + (((double) ell1) * (sco1/sco3)) */		/* THIS SETTING APPLIES TO THE HALF-GAUSSIAN */
+/* #define thetaopt		((double) ell3) + (((double) ell2) * (sco2/sco3)) + (((double) ell1) * (sco1/sco3)) */		/* THIS SETTING APPLIES TO THE GAUSSIAN */
 
-#define thetaopt    50.0                                                                       /*  THIS SETTING APPLIES TO THE INTERMEDIATE OPTIMUM */
+#define thetaopt    50.0                                                                       /*  THIS SETTING APPLIES TO THE INTERMEDIATE OPTIMUM / HALF-GAUSSIAN */
 
 #define xinc		10						/* statistics to be recorded every ne/xinc generations */
 
